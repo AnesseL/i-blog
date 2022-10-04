@@ -26,12 +26,21 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded text-white"
-                            href="{{ url('/about-me') }}">About Me</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded text-white"
-                            href="{{ url('/') }}">All News</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded text-white"
-                            href="{{ url('/contact') }}">Contact</a></li>
+                        <li class="nav-item mx-0 mx-lg-1">
+                            <a href="{{ url('/about-me') }}" class="nav-link py-3 px-0 px-lg-3 rounded text-white {{ (request()->routeIs('pages.about')) ? ' active text-decoration-underline' : '' }}" {{ (request()->routeIs('pages.about')) ? ' aria-current=page' : '' }}>
+                             About Me  
+                            </a>
+                        </li>
+                        <li class="nav-item mx-0 mx-lg-1">
+                            <a href="{{ url('/') }}" class="nav-link py-3 px-0 px-lg-3 rounded text-white {{ (request()->routeIs('posts.posts')) ? ' active text-decoration-underline' : '' }}" {{ (request()->routeIs('posts.posts')) ? ' aria-current=page' : '' }}>
+                            All News
+                            </a>
+                        </li>
+                        <li class="nav-item mx-0 mx-lg-1">
+                            <a href="{{ url('/contact') }}" class="nav-link py-3 px-0 px-lg-3 rounded text-white {{ (request()->routeIs('pages.contact')) ? ' active text-decoration-underline' : '' }} {{ (request()->routeIs('pages.contact')) ? ' aria-current=page' : '' }}">
+                            Contact
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>

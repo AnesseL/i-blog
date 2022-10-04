@@ -17,15 +17,18 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+Route::get('/about-me', function () {
+    return view('pages.about');
+})->name('pages.about');
+
+Route::get('/contact', function () {
+    return view('pages.contact');
+})->name('pages.contact');
+
 Route::get('/',[PostController::class,'index'])->name('posts.posts');
 Route::get('/{slug}',[PostController::class,'show'])->name('posts.post');
 
-Route::get('/about-me', function(){
-    return view('pages.about');
-})->name('posts.posts');
-Route::get('/contact',function(){
-    return view('pages.contact');
-})->name('posts.posts');
+
 
 //Auth::routes();
 
