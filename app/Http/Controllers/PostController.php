@@ -12,4 +12,10 @@ class PostController extends Controller
         $posts = Post::all();
         return view('posts.posts', compact('posts'));
     }
+    public function show($slug)
+    {
+        $post = Post::whereSlug($slug)->firstOrFail();
+        return view('posts.post', compact('post'));
+    }
+
 }

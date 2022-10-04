@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 Route::get('/',[PostController::class,'index'])->name('posts.posts');
+Route::get('/{slug}',[PostController::class,'show'])->name('posts.post');
 
 Route::get('/about-me', function(){
     return view('pages.about');
