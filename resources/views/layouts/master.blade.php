@@ -13,7 +13,7 @@
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body id="master">
-    <header class="py-5">
+    <header class="py-4">
         <nav id="mainNav" class="navbar navbar-expand-lg navbar-light bg-primary shadow-sm text-uppercase fixed-top">
             <div class="container">
                 <a class="navbar-brand text-white font-weight-bold bg-primary text-white rounded" href="{{ url('/') }}">
@@ -37,8 +37,10 @@
             </div>
         </nav>
     </header>
-    <main class="text-center py-5 bg-secondary">
-        @yield('content')
+    <main class="py-5 bg-secondary">
+        <div class="container">
+            @yield('content')
+        </div>
     </main>
    <footer class="bg-primary py-5">
         <section class="container row m-auto text-center">

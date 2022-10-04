@@ -32,7 +32,7 @@ class PostFactory extends Factory
             return [
                 "content" => null,
                 "type"  => 'photo',
-                "image" => fake()->imageUrl(500, 300),
+                "image" => fake()->imageUrl(1700, 900),
             ];
         });
     }
