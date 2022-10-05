@@ -38,5 +38,8 @@
         </article>
         @endif
         @endforeach
+        <div class="pagination col m-auto text-center">
+          @include('partials.pagination', ['pagination'=> $posts])
+        </div>
       </div>
 @endsection
