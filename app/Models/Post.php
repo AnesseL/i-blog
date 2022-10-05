@@ -17,4 +17,8 @@ class Post extends Model
         $this->attributes['title'] = $value;
         $this->attributes['slug'] = Str::slug($value);
     }
+    public function getExcerptAttribute($value)
+    {
+        return Str::limit($this->content, 270, ' ');
+    }
 }

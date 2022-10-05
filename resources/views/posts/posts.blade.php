@@ -12,8 +12,11 @@
                 <h2 >{{ $post->title }}</h2>
               </a>
               <div class="mb-1 text-primary">{{ $post->date }}</div>
-              <p class="card-text mb-auto">{{ $post->content }}</p>
-              <a href="{{ route('posts.post', $post->slug )}}" class="stretched-link text-decoration-none">Continue reading</a>
+              <p class="card-text mb-auto">{{ $post->excerpt }}
+                <a href="{{ route('posts.post', $post->slug )}}" class="stretched-link text-decoration-none text-white">
+                  &#187; Continue reading &raquo;
+                </a>
+              </p>
             </div>
           </div>
         </article>
