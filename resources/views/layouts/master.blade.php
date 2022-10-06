@@ -42,7 +42,7 @@
                             </a>
                         </li>
                         <li class="nav-item mx-0 mx-lg-1">
-                            <a href="" class="nav-link py-3 px-0 px-lg-3 rounded text-white {{ (request()->routeIs('pages.contact')) ? ' active text-decoration-underline' : '' }} {{ (request()->routeIs('pages.contact')) ? ' aria-current=page' : '' }}">
+                            <a href="{{ route('account.login')}}" class="nav-link py-3 px-0 px-lg-3 rounded text-white {{ (request()->routeIs('account.login')) ? ' active text-decoration-underline' : '' }} {{ (request()->routeIs('account.login')) ? ' aria-current=page' : '' }}">
                             Sign in
                             </a>
                         </li>
