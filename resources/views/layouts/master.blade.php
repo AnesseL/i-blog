@@ -41,6 +41,16 @@
                             Contact
                             </a>
                         </li>
+                        <li class="nav-item mx-0 mx-lg-1">
+                            <a href="" class="nav-link py-3 px-0 px-lg-3 rounded text-white {{ (request()->routeIs('pages.contact')) ? ' active text-decoration-underline' : '' }} {{ (request()->routeIs('pages.contact')) ? ' aria-current=page' : '' }}">
+                            Sign in
+                            </a>
+                        </li>
+                        <li class="nav-item mx-0 mx-lg-1">
+                            <a href="{{ route('account.register')}}" class="nav-link py-3 px-0 px-lg-3 rounded text-white {{ (request()->routeIs('account.register')) ? ' active text-decoration-underline' : '' }} {{ (request()->routeIs('account.register')) ? ' aria-current=page' : '' }}">
+                            Register
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -48,6 +58,7 @@
     </header>
     <main class="py-5 bg-secondary">
         <div class="container">
+            @include('partials.message')
             @yield('content')
         </div>
     </main>

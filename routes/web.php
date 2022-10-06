@@ -1,6 +1,8 @@
 <?php
+namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\PostController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,7 +31,6 @@ Route::get('/',[PostController::class,'index'])->name('posts.posts');
 Route::get('/{slug}',[PostController::class,'show'])->name('posts.post');
 
 
-
-//Auth::routes();
-
-//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Auth::routes();
+Route::get('/account/register', [RegisterController::class, 'showRegistrationForm'])->name('account.register');
+Route::post('/account/register', [RegisterController::class, 'register']);
