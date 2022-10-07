@@ -42,9 +42,15 @@
                             </a>
                         </li>
                         <li class="nav-item mx-0 mx-lg-1">
+                            @auth
+                            <a href="#logout" class="nav-link py-3 px-0 px-lg-3 rounded text-white">
+                            Log out
+                            </a>                              
+                            @else
                             <a href="{{ route('account.login')}}" class="nav-link py-3 px-0 px-lg-3 rounded text-white {{ (request()->routeIs('account.login')) ? ' active text-decoration-underline' : '' }} {{ (request()->routeIs('account.login')) ? ' aria-current=page' : '' }}">
                             Sign in
                             </a>
+                            @endauth
                         </li>
                         <li class="nav-item mx-0 mx-lg-1">
                             <a href="{{ route('account.register')}}" class="nav-link py-3 px-0 px-lg-3 rounded text-white {{ (request()->routeIs('account.register')) ? ' active text-decoration-underline' : '' }} {{ (request()->routeIs('account.register')) ? ' aria-current=page' : '' }}">
@@ -106,5 +112,16 @@
             <p>Laravel v {{ Illuminate\Foundation\Application::VERSION }} (PHP v {{ PHP_VERSION }})</p>
         </section>
    </footer>
+@auth
+<form action="{{ route('account.logout') }}" method="POST" id="formlogout">
+@csrf
+</form>
+<script>
+    document.querySelector("a[href='#logout']").addEventListener('click', function(event){
+    event.preventDefault();
+    document.getElementById('formlogout').submit();
+}, false);
+</script>
+@endauth
 </body>
 </html>
