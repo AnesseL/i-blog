@@ -38,3 +38,8 @@ Route::post('/account/register', [RegisterController::class, 'register']);
 Route::get('/account/login', [LoginController::class, 'showLoginForm'])->name('account.login');
 Route::post('/account/login', [LoginController::class, 'login']);
 Route::post('/account/logout', [LoginController::class, 'logout'])->name('account.logout');
+
+Route::get('/account/password/reset', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
+Route::post('/account/password/email', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
+Route::get('/account/password/reset/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
+Route::post('/account/password/reset', [ResetPasswordController::class, 'reset'])->name('password.update');

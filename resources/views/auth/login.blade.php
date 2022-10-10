@@ -27,7 +27,7 @@
             </a>
         </p>
         <p>Forgot password? &#187; 
-            <a href="" class="text-decoration-none text-white">
+            <a href="{{ route('password.request') }}" class="text-decoration-none text-white">
                 Reset your password
             </a>
         </p>
