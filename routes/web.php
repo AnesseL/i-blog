@@ -31,7 +31,8 @@ Route::get('/',[PostController::class,'index'])->name('posts.posts');
 Route::get('/{slug}',[PostController::class,'show'])->name('posts.post');
 
 
-Auth::routes();
+Auth::routes(['verify'=>true]);
+
 Route::get('/account/register', [RegisterController::class, 'showRegistrationForm'])->name('account.register');
 Route::post('/account/register', [RegisterController::class, 'register']);
 
@@ -43,3 +44,7 @@ Route::get('/account/password/reset', [ForgotPasswordController::class, 'showLin
 Route::post('/account/password/email', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
 Route::get('/account/password/reset/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
 Route::post('/account/password/reset', [ResetPasswordController::class, 'reset'])->name('password.update');
+
+Route::get('/account/email/verify/{id}/{hash}', [VerificationController::class, 'verify'])->name('verification.verify');
+Route::get('/account/email/verify', [VerificationController::class, 'show'])->name('verification.notice');
+Route::post('/account/email/resend', [VerificationController::class, 'resend'])->name('verification.resend');
