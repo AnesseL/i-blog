@@ -9,13 +9,13 @@
         <div class="form-group row mb-4">
             <label for="title" class="col-3 col-form-label">Insert Post Title:</label>
             <div class="col-7">
-              <input id="title" type="text" class="form-control" placeholder="Title" name="title" value="" >
+              <input id="title" type="text" class="form-control{{ $errors->has('title') ? ' is-invalid' : '' }}" placeholder="Title" name="title" value="{{ old('title') }}" >
             </div>
         </div>
         <div class="form-group row mb-4">
-            <label for="type" class="col-3 col-form-label">Select Post Type:</label>
+            <label for="type" class="col-3 col-form-label" value=" {{ old('type') }}">Select Post Type:</label>
             <div class="col-7">
-                <select name="type" class="form-select">
+                <select name="type" class="form-select{{ $errors->has('type') ? ' is-invalid' : '' }}">
                     <option selected>Open this select menu and choose type</option>
                     <option value="text">Type: Text</option>
                     <option value="photo">Type: Photo</option>
@@ -25,19 +25,20 @@
         <div class="form-group row mb-4">
             <label for="date" class="col-3 col-form-label">Choose Date:</label>
             <div class="col-7">
-                <input id="date" type="date" class="form-control" placeholder="Date" name="date" value="" >
+                <input id="date" type="date" class="form-control{{ $errors->has('date') ? ' is-invalid' : '' }}" placeholder="Date" name="date" value=" {{ old('date') }}" >
             </div>
         </div>
         <div class="form-group row mb-4">
             <label for="image" class="col-3 col-form-label">Choose Image:</label>
             <div class="col-7">
-                <input id="image" type="file" class="form-control" placeholder="Image" name="image" value="" >
+                <input id="image" type="file" class="form-control" placeholder="Image" name="image" value=" " >
             </div>
         </div>
         <div class="form-group row mb-4">
             <label for="content" class="col-3 col-form-label">Fill In The Content:</label>
             <div class="col-7">
                 <textarea id="textarea" rows="7"class="form-control" placeholder="Fill It Up, Please!" name="content" value="" >
+                    {{ old('content') }}
                 </textarea>
             </div>
         </div>
