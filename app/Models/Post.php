@@ -8,7 +8,8 @@ use Illuminate\Support\Str;
 
 class Post extends Model
 {
-    protected $guarded = [];
+    // protected $guarded = [];
+    protected $fillable = ['title','content','date','type','image'];
 
     use HasFactory;
 

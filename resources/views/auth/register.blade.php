@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'I-Blog Register')   
+@section('title', 'I-Blog - Register')   
 @section('content')
 <h1 class="text-center pt-3">Registration Form</h1>
 <div>

@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'Home - All Posts')
+@section('title', 'I-Blog - Home - All Posts')
 @section('content')
     <h1 class="text-center pt-3">All News</h1>
     <div class="col my-5">

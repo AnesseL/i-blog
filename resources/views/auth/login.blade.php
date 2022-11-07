@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'I-Blog Login')
+@section('title', 'I-Blog - Login')
     
 @section('content')
 <h1 class="text-center pt-3">Login Form</h1>

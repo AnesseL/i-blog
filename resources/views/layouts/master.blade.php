@@ -8,7 +8,9 @@
     <meta name="keywords" content="HTML, CSS, JavaScript, Bootstrap 5, PHP, OOP, Laravel 9" />
     <meta name="author" content="Agnieszka Leśków" mail="agnieszkaleskow@gmail.com" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ config('app.i-blog', 'Home Page - Posts') }}</title>
+    {{-- <title>{{ config('app.i-blog', 'Home Page - Posts') }}</title> --}}
+    {{-- <title>@yield('app.i-blog', 'Home Page - Posts')</title> --}}
+    <title>@yield('title')</title>
 
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
@@ -51,6 +53,11 @@
                             Sign in
                             </a>
                             @endauth
+                        </li>
+                        <li class="nav-item mx-0 mx-lg-1">
+                            <a href="{{ route('admin.post.create')}}" class="nav-link py-3 px-0 px-lg-3 rounded text-white {{ (request()->routeIs('admin.post.create')) ? ' active text-decoration-underline' : '' }} {{ (request()->routeIs('admin.post.create')) ? ' aria-current=page' : '' }}">
+                                Create new post
+                            </a>
                         </li>
                         <li class="nav-item mx-0 mx-lg-1">
                             <a href="{{ route('account.register')}}" class="nav-link py-3 px-0 px-lg-3 rounded text-white {{ (request()->routeIs('account.register')) ? ' active text-decoration-underline' : '' }} {{ (request()->routeIs('account.register')) ? ' aria-current=page' : '' }}">
