@@ -8,6 +8,11 @@
           <div class="row border overflow-hidden flex-md-row shadow-sm h-md-250 position-relative">
             <div class="col p-4 d-flex flex-column position-static">
               <h2 >{{ $post->title }}</h2>
+              <div class="mb-1">
+                <a href="{{ route('admin.post.edit', $post->id) }}" class="text-decoration-none text-danger">
+                  <i class="bi bi-pencil-square"></i>
+                  Edit Post</a>
+              </div>
               <div class="mb-1 text-primary">{{ $post->date }}</div>
               <p class="card-text mb-auto">{{ $post->content }}</p>
             </div>
@@ -18,6 +23,11 @@
           <div class="row border overflow-hidden flex-md-row shadow-sm h-md-250 position-relative">
             <div class="col p-4 d-flex flex-column position-absolute z-index-1">
               <h2 >{{ $post->title }}</h2>
+              <div class="mb-1">
+                <a href="{{ route('admin.post.edit', $post->id) }}" class="text-decoration-none text-danger">
+                  <i class="bi bi-pencil-square"></i>
+                  Edit Post</a>
+              </div>
               <div class="mb-1 text-muted">{{ $post->date }}</div>
             </div>
             <figure class="figure col-auto d-block p-0 mb-0">

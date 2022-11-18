@@ -2,12 +2,12 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="description" content="Simple I-Blog" />
     <meta name="keywords" content="HTML, CSS, JavaScript, Bootstrap 5, PHP, OOP, Laravel 9" />
     <meta name="author" content="Agnieszka Leśków" mail="agnieszkaleskow@gmail.com" />
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="csrf-token" content="{{ csrf_token() }}"/>
     {{-- <title>{{ config('app.i-blog', 'Home Page - Posts') }}</title> --}}
     {{-- <title>@yield('app.i-blog', 'Home Page - Posts')</title> --}}
     <title>@yield('title')</title>

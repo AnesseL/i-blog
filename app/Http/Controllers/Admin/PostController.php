@@ -10,16 +10,6 @@ use Illuminate\Support\Arr;
 class PostController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
@@ -53,18 +43,6 @@ class PostController extends Controller
         session()->flash('message','Post has been added!');
         return redirect(route('posts.post', $post->slug));
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -73,7 +51,9 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+        $post = Post::findOrFail($id);
+        // echo dd($post);
+        return view('admin.post.edit', compact('post'));
     }
 
     /**

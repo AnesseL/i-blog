@@ -11,7 +11,15 @@
               <a href="{{ route('posts.post', $post->slug )}}" class="text-decoration-none mb-3 text-white">
                 <h2 >{{ $post->title }}</h2>
               </a>
-              <div class="mb-1 text-primary">{{ $post->date }}</div>
+              <div class="mb-1">
+                <a href="{{ route('admin.post.edit', $post->id) }}" class="text-decoration-none text-danger">
+                  <i class="bi bi-pencil-square"></i>
+                  Edit Post</a>
+              </div>
+              <div class="mb-1 text-primary">
+                <i class="bi bi-calendar"></i>
+                {{ $post->date }}
+              </div>
               <p class="card-text mb-auto">{{ $post->excerpt }}
                 <a href="{{ route('posts.post', $post->slug )}}" class="stretched-link text-decoration-none text-white">
                   &#187; Continue reading &raquo;
@@ -27,7 +35,15 @@
               <a href="{{ route('posts.post', $post->slug )}}" class="text-decoration-none mb-3 text-white">
                 <h2 >{{ $post->title }}</h2>
               </a>
-              <div class="mb-1 text-muted">{{ $post->date }}</div>
+              <div class="mb-1">
+                <a href="{{ route('admin.post.edit', $post->id) }}" class="text-decoration-none text-danger">
+                  <i class="bi bi-pencil-square"></i>
+                  Edit Post</a>
+              </div>
+              <div class="mb-1 text-muted">
+                <i class="bi bi-calendar"></i>
+                {{ $post->date }}
+              </div>
             </div>
             <figure class="figure col-auto d-block p-0 mb-0">
                 <a href="{{ route('posts.post', $post->slug )}}" class="col-auto d-block">

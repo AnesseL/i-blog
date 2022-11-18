@@ -1,31 +1,31 @@
 @extends('layouts.master')
-@section('title', 'Admin Panel - Create new post')
+@section('title', 'Admin Panel - Edit post')
 
 @section('content')
-    <h1 class="text-center pt-3">Create new post</h1>
-<form method="POST" action="{{ route('admin.post.create') }}" class="row m-auto py-5 form-group text-start">
+    <h1 class="text-center pt-3">Edit post </h1>
+<form method="POST" action="" class="row m-auto py-5 form-group text-start">
     @csrf  
       <div class="col-10">
         <div class="form-group row mb-4">
             <label for="title" class="col-3 col-form-label">Insert Post Title:</label>
             <div class="col-7">
-              <input id="title" type="text" class="form-control{{ $errors->has('title') ? ' is-invalid' : '' }}" placeholder="Title" name="title" value="{{ old('title') }}" >
+              <input id="title" type="text" class="form-control{{ $errors->has('title') ? ' is-invalid' : '' }}" placeholder="Title" name="title" value="{{ $post->title }}" >
             </div>
         </div>
         <div class="form-group row mb-4">
-            <label for="type" class="col-3 col-form-label" value=" {{ old('type') }}">Select Post Type:</label>
+            <label for="type" class="col-3 col-form-label" value=" {{ $post->type }}">Select Post Type:</label>
             <div class="col-7">
                 <select name="type" class="form-select{{ $errors->has('type') ? ' is-invalid' : '' }}">
                     <option selected>Open this select menu and choose type</option>
-                    <option value="text">Type: Text</option>
-                    <option value="photo">Type: Photo</option>
+                    <option value="text" {{ $post->type==="text" ? ' selected' : ' ' }}>Type: Text</option>
+                    <option value="photo" {{ $post->type==="photo" ? ' selected' : ' ' }}>Type: Photo</option>
                 </select>
             </div>
         </div>
         <div class="form-group row mb-4">
             <label for="date" class="col-3 col-form-label">Choose Date:</label>
             <div class="col-7">
-                <input id="date" type="date" class="form-control{{ $errors->has('date') ? ' is-invalid' : '' }}" placeholder="Date" name="date" value=" {{ old('date') }}" >
+                <input id="date" type="date" class="form-control{{ $errors->has('date') ? ' is-invalid' : '' }}" placeholder="Date" name="date" value=" {{ $post->date->format('Y-m-d') }}" >
             </div>
         </div>
         <div class="form-group row mb-4">
@@ -37,8 +37,8 @@
         <div class="form-group row mb-4">
             <label for="content" class="col-3 col-form-label">Fill In The Content:</label>
             <div class="col-7">
-                <textarea id="textarea" type="text" rows="7" class="form-control" placeholder="Fill It Up, Please!" name="content" value="{{ old('content') }}" >
-                    
+                <textarea id="textarea" rows="7"class="form-control" placeholder="Fill It Up, Please!" name="content" value="" >
+                    {{ $post->content }}
                 </textarea>
             </div>
         </div>

@@ -56,4 +56,6 @@ Route::post('/account/email/resend', [VerificationController::class, 'resend'])-
 Route::group(['prefix' => 'admin', 'namespace' => 'App\Http\Controllers\Admin'], function() {
     Route::get('/post/create',[Admin\PostController::class, 'create'])->name('admin.post.create');
     Route::post('/post/create',[Admin\PostController::class, 'store'])->name('admin.post.create');
+    Route::get('/post/{id}',[Admin\PostController::class, 'edit'])->name('admin.post.edit');
+    // Route::post('/post/{id}',[Admin\PostController::class, 'update']);
 });
